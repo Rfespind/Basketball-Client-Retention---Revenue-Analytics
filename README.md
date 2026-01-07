@@ -5,7 +5,21 @@ This project analyzes client behavior from a small basketball coaching business 
 
 Using real session-level data, I engineered time-based and cumulative features, built end-to-end machine learning pipelines, and compared baseline and ensemble models to determine the most effective approach for a small, real-world dataset.
 
+## Key Takeaways
+- Group-aware validation is essential for client-level prediction problems.
+- Ensemble models can significantly outperform linear baselines on small, behavioral datasets.
+- Cumulative engagement metrics are strong predictors of retention.
+- Thoughtful feature engineering can outweigh dataset size.
 ---
+## Key Results
+
+| Model                | F1 Score | Precision | Recall | ROC-AUC |
+|---------------------|----------|-----------|--------|---------|
+| Logistic Regression | 0.51     | 0.45      | 0.60   | 0.48    |
+| Random Forest       | 0.63     | 0.71      | 0.60   | 0.67    |
+
+**Takeaway:** Random Forest outperformed Logistic Regression, especially in **precision** and **ROC-AUC**, meaning fewer false positives and better ranking ability for retention prediction.
+
 
 ## Business Problem
 Client retention is critical for small service-based businesses.  
@@ -90,7 +104,7 @@ An ensemble model better suited for nonlinear patterns and small datasets.
 ## Feature Importance (Random Forest)
 The Random Forest model highlighted the most influential predictors of retention:
 
-![Feature Importance](images/feature_importance_rf.png)
+![Feature Importance (Random Forest)](Features/feature_importance_rf.png)
 
 **Top drivers included:**
 - Session month and day of week
@@ -112,6 +126,7 @@ These features reflect **engagement consistency and investment over time**, whic
 [Download the report](reports/Basketball_Client_Retention_Report.docx)
 
 ---
+📘 See full analysis: [Basketball_Client_Project.ipynb](Basketball_Client_Project.ipynb)
 
 ## Technologies Used
 - Python
@@ -121,19 +136,24 @@ These features reflect **engagement consistency and investment over time**, whic
 
 ---
 
-## Key Takeaways
-- Group-aware validation is essential for client-level prediction problems.
-- Ensemble models can significantly outperform linear baselines on small, behavioral datasets.
-- Cumulative engagement metrics are strong predictors of retention.
-- Thoughtful feature engineering can outweigh dataset size.
-
----
-
 ## Future Improvements
 - Collect additional longitudinal data
 - Tune Random Forest hyperparameters
 - Explore gradient boosting models
 - Deploy as a lightweight retention scoring tool
+---
+## Repository Structure
+The repository is organized as follows:
+```text
+Basketball-Client-Retention-ML/
+├── Basketball_Client_Project.ipynb        # End-to-end analysis & modeling
+├── Features/
+│   └── feature_importance_rf.png           # Random Forest feature importance plot
+├── reports/
+│   └── Basketball_Client_Retention_Report.docx
+├── README.md
+├── requirements.txt
+└── .gitignore
 
 ---
 
