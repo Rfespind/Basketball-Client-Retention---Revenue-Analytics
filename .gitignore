@@ -1,0 +1,15 @@
+# Ignore virtual environments
+.venv/
+
+# Ignore datasets / private data
+data/
+Basketball Client Data.xlsx
+
+# Ignore notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore Python cache
+__pycache__/
+
+# Mac system files
+.DS_Store
